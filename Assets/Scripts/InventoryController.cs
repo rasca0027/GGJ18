@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -45,7 +46,7 @@ public class InventoryController : MonoBehaviour
 		inventory.Add("anger_crop", 0);
 		inventory.Add("desire_crop", 0);
 		inventory.Add("grief_crop", 0);
-		inventory.Add("stress_crop", 0);
+		inventory.Add("stress_crop", 20);
 		
 	}
 	
@@ -77,6 +78,12 @@ public class InventoryController : MonoBehaviour
 
 		inventory[stock] += num;
 
+	}
+
+	public bool CheckCrop(String seed)
+	{
+		string s = seed.ToLower() + "_crop";
+		return inventory[s] > 0;
 	}
 
 	public void CloseInv()

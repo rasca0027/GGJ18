@@ -28,7 +28,7 @@ public class TimeController : MonoBehaviour
 	{
 		hour = 3f;
 		dateCount = 1;
-		dayCount = 4; // TODO 0
+		dayCount = 0; // TODO 0
 	}
 	
 	// Update is called once per frame
@@ -111,6 +111,7 @@ public class TimeController : MonoBehaviour
 		}
 		else
 		{
+			GetComponent<Dialogue>().inMarket = false;
 			FarmScene.active = true;
 			MarketScene.active = false;
 			toolbar.active = true;
