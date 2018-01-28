@@ -7,8 +7,10 @@ public class LandController : MonoBehaviour
 {
 	public Crop crop;
 	public bool watered;
+	private int chosen;
 	private GameObject gameManager;
 	private Sprite[] spritesNight;
+	private bool waitingChoose;
 	
 
 	void Awake()
@@ -21,12 +23,32 @@ public class LandController : MonoBehaviour
 		crop = new Crop();
 		watered = false;
 		spritesNight = Resources.LoadAll<Sprite>("NightCrops");
-
+		waitingChoose = false;
 	}
 
 	private void Update()
 	{
 		
+		
+		if (waitingChoose)
+		{
+			chosen = gameManager.GetComponent<PlayerController>().chosenSeed;
+			switch (chosen)
+			{
+				case 1:
+					PlantHope();
+					break;
+					
+				case 2:
+					PlantStress();
+					Debug.Log("successful choose stress");
+					break;
+					
+				case 0:
+					Debug.Log("still waiting");
+					break;
+			}
+		}
 		
 		if (crop.state == 0 || crop.state == 5)
 		{
@@ -83,16 +105,11 @@ public class LandController : MonoBehaviour
 				if (crop.state == 1)
 				{
 					Debug.Log("sowed");
-					crop.state = 2;
+					
 					// add emotion
-					
+					gameManager.GetComponent<InventoryController>().OpenInv();
+					waitingChoose = true;
 
-					Hope hope = new Hope();
-					crop.AddSeed(hope);
-					// TODO!!
-					gameManager.GetComponent<TimeController>().PassTime(0.5f);
-					
-					
 				}
 			}
 			else if (cur == 3) // water
@@ -200,4 +217,35 @@ public class LandController : MonoBehaviour
 			gameManager.GetComponent<PlayerController>().currentAction = 0;
 		}
 	}
+
+	void PlantHope()
+	{
+		if (gameManager.GetComponent<InventoryController>().inventory["hope_seed"] > 0)
+		{
+			Hope hope = new Hope();
+			crop.AddSeed(hope);
+			crop.state = 2;
+			gameManager.GetComponent<TimeController>().PassTime(0.5f);
+			gameManager.GetComponent<InventoryController>().AddInv("hope_seed", -1);
+			gameManager.GetComponent<PlayerController>().chosenSeed = 0;
+			waitingChoose = false;
+			gameManager.GetComponent<InventoryController>().CloseInv();
+		} else { Debug.Log("not enough seed"); }
+	}
+	
+	void PlantStress()
+	{
+		if (gameManager.GetComponent<InventoryController>().inventory["stress_seed"] > 0)
+		{
+			Stress hope = new Stress();
+			crop.AddSeed(hope);
+			crop.state = 2;
+			gameManager.GetComponent<TimeController>().PassTime(0.5f);
+			gameManager.GetComponent<InventoryController>().AddInv("stress_seed", -1);
+			gameManager.GetComponent<PlayerController>().chosenSeed = 0;
+			waitingChoose = false;
+			gameManager.GetComponent<InventoryController>().CloseInv();
+		} else { Debug.Log("not enough seed"); }
+	}
+	
 }

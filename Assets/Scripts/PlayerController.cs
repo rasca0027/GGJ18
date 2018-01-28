@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
 	public Texture2D cursorWater;
 	public Texture2D cursorHarvest;
 	public Texture2D cursorStore;
-	public int currentAction = 0; 
+	public int currentAction = 0;
+	public int chosenSeed;
 
 	private bool clicked = false;
 	private Vector3 mousePosition;
@@ -23,8 +24,9 @@ public class PlayerController : MonoBehaviour
 	
 	
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
+		chosenSeed = 0;
 	}
 	
 	// Update is called once per frame
@@ -85,5 +87,35 @@ public class PlayerController : MonoBehaviour
 		clicked = true;
 		currentAction = 5;
 		cursor = cursorDig;	
+	}
+
+	public void ChooseStress()
+	{
+		chosenSeed = 2;
+	}
+
+	public void ChooseHope()
+	{
+		chosenSeed = 1;
+	}
+
+	public void ChooseFear()
+	{
+		chosenSeed = 4;
+	}
+
+	public void ChooseAnger()
+	{
+		chosenSeed = 5;
+	}
+
+	public void ChooseDesire()
+	{
+		chosenSeed = 6;
+	}
+
+	public void ChooseGrief()
+	{
+		chosenSeed = 7;
 	}
 }
