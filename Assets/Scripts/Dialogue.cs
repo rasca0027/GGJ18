@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.UIElements;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -150,9 +150,18 @@ public class Dialogue : MonoBehaviour
 						int i = 0;
 						foreach (string key in curMission.choices.Keys)
 						{
-							Debug.Log(key);
-							choicePanel.transform.GetChild(i).transform.GetChild(0).GetComponent<Text>().text = key;
 							
+							choicePanel.transform.GetChild(i).transform.GetChild(0).GetComponent<Text>().text = key;
+
+							if (curMission.choices[key] == "Die")
+							{
+								choicePanel.transform.GetChild(i).GetComponent<UnityEngine.UI.Button>().onClick.AddListener(DieHandler);
+							}
+							else
+							{
+								// normal handler
+							}
+
 							i += 1;
 						}
 
@@ -207,12 +216,10 @@ public class Dialogue : MonoBehaviour
 
 	}
 
-	public void GiveStress()
+	public void DieHandler()
 	{
-		// check inv
-		
-		// remove inv
-		
-		// check end
+		// change Scene
+		Debug.Log("DIE");
+		SceneManager.LoadScene("Die", LoadSceneMode.Single);
 	}
 }
