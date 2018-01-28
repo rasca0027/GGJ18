@@ -12,8 +12,8 @@ public class Dialog
 	public string opening;
 	public string request;
 	public string[] interrogation;
-	public string[] choices;
-	public int answer;
+	public Dictionary<string, string> choices;
+
 	/*
 	 * Answer
 	 * 0: All die
@@ -36,13 +36,19 @@ public class Dialogue : MonoBehaviour
 	public GameObject myDia;
 	public GameObject customer;
 	public GameObject choicePanel;
+	public GameObject customerImage;
 	public bool inMarket;
+	public GameObject choiceBtn;
 	
 	private int progress;
 	private int curMissionNum;
 	private Dialog curMission;
 	private bool toggle;
 	private int interrogate;
+	[SerializeField]
+	private Sprite[] images;
+
+	private bool choiceGenerated = false;
 	
 	// TRY
 	//private List<List<string>> allMissions = new List<List<string>>();
@@ -93,6 +99,7 @@ public class Dialogue : MonoBehaviour
 					progress = 0;
 					curMissionNum += 1;
 					curMission = missions[curMissionNum];
+					choiceGenerated = false;
 				}
 				else
 				{
@@ -107,6 +114,8 @@ public class Dialogue : MonoBehaviour
 			switch (progress)
 			{
 				case 0:
+					// change image
+					customerImage.GetComponent<SpriteRenderer>().sprite = images[curMissionNum];
 					customer.active = true;
 					customer.transform.GetChild(0).GetComponent<Text>().text = curMission.opening;
 					break;
@@ -136,6 +145,20 @@ public class Dialogue : MonoBehaviour
 				case 4:
 					choicePanel.active = true;
 					// display choice
+					if (!choiceGenerated)
+					{
+						int i = 0;
+						foreach (string key in curMission.choices.Keys)
+						{
+							Debug.Log(key);
+							choicePanel.transform.GetChild(i).transform.GetChild(0).GetComponent<Text>().text = key;
+							
+							i += 1;
+						}
+
+						choiceGenerated = true;
+					}
+
 					break;
 
 			} // end switch
@@ -151,18 +174,18 @@ public class Dialogue : MonoBehaviour
 	private void init()
 	{
 		
-
 		// TODO reead from json file
 		Dialog mission1 = new Dialog();
-		mission1.opening = "Hee-Haw! Out with your goods!";
-		mission1.request = "The forbidden fruit. My gateway to Valhalla. I want Joy!!!";
+		mission1.opening = "What’s up farmer dude?";
+		mission1.request = "I’ve got finals coming up and need some stress.";
 		mission1.interrogation = new string[]
 		{
-			"Calm down man. I don’t have it. It takes ages to grow.",
-			"Out with it! Or I will kill you. You won’t be my first, and certainly not the last. "
+			"Why would you want more stress in your life?",
+			"I think that I can pass my finals without even studying and I want to feel the nagging sense of stress that would be appropriate for this situation."
 		};
-		mission1.choices = new string[] { "Stress", "Decline" };
-		mission1.answer = 6;
+		mission1.choices = new Dictionary<string, string>();
+		mission1.choices.Add("Stress", "Thank You!");
+		mission1.choices.Add("Decline", "Why are you doing this to me?");
 
 		missions[0] = mission1;
 		
@@ -175,8 +198,9 @@ public class Dialogue : MonoBehaviour
 			"Calm down man. I don’t have it. It takes ages to grow.",
 			"Out with it! Or I will kill you. You won’t be my first, and certainly not the last. "
 		};
-		mission2.choices = new string[] { "Stress", "Decline" };
-		mission2.answer = 6;
+		mission2.choices = new Dictionary<string, string>();
+		
+
 
 		missions[1] = mission2;
 		missions[2] = mission2;
