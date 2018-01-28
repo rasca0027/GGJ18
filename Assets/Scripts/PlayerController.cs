@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 			Cursor.SetCursor(cursor, hotSpot, cursorMode);
 
 			if (Input.GetMouseButtonDown(1))
-				clicked = false;
+				currentAction = 0;
 		}
 		
 		

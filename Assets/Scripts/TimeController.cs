@@ -105,15 +105,15 @@ public class TimeController : MonoBehaviour
 			FarmScene.active = false;
 			toolbar.active = false;
 			MarketScene.active = true;
+			GetComponent<Dialogue>().inMarket = true;
 		}
 		else
 		{
 			FarmScene.active = true;
 			MarketScene.active = false;
 			toolbar.active = true;
+			GetComponent<Dialogue>().inMarket = false;
 		}
-
-
 
 	}
 }

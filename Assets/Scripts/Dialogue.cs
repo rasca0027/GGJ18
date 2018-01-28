@@ -12,6 +12,7 @@ public class Dialog
 	public string opening;
 	public string request;
 	public string[] interrogation;
+	public string[] choices;
 	public int answer;
 	/*
 	 * Answer
@@ -34,40 +35,45 @@ public class Dialogue : MonoBehaviour
 	public Dialog[] missions = new Dialog[3];
 	public GameObject myDia;
 	public GameObject customer;
+	public bool inMarket;
 	
 	private int progress;
+	private int curMissionNum;
 	private Dialog curMission;
-	private bool inMission;
+
 	
 	// Use this for initialization
 	void Start () {
 		init();
 		progress = 0;
+		curMissionNum = 0;
 		curMission = missions[0];
-		inMission = true;
+		inMarket = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (inMission)
+		if (inMarket)
 		{
 			if (Input.GetMouseButtonDown(0))
 			{
 				progress += 1;
+				customer.active = false;
+				myDia.active = false;
 			}
-		}
 
-		switch (progress)
-		{
-			case 0:
-				customer.active = true;
-				customer.GetComponent<Text>().text = missions[0].opening;
-				break;
-			case 1:
-				myDia.active = true;
-				myDia.GetComponent<Text>().text = "What do you want?";
-				break;
+			switch (progress)
+			{
+				case 0:
+					customer.active = true;
+					customer.GetComponent<Text>().text = missions[0].opening;
+					break;
+				case 1:
+					myDia.active = true;
+					myDia.GetComponent<Text>().text = "What do you want?";
+					break;
+			}
 		}
 
 	}
@@ -85,6 +91,7 @@ public class Dialogue : MonoBehaviour
 			"Calm down man. I don’t have it. It takes ages to grow.",
 			"Out with it! Or I will kill you. You won’t be my first, and certainly not the last. "
 		};
+		mission1.choices = new string[] { "Stress", "Decline" };
 		mission1.answer = 6;
 		missions[0] = mission1;
 	}
