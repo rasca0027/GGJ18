@@ -21,7 +21,7 @@ public class TimeController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		hour = 6f;
+		hour = 3f;
 		dateCount = 1;
 		dayCount = 0;
 	}
@@ -62,7 +62,7 @@ public class TimeController : MonoBehaviour
 
 	public void PassTime (float workHour)
 	{
-		if ((hour + workHour) < 17.0f)
+		if ((hour + workHour) < 13.0f)
 		{
 			hour += workHour;
 		}
@@ -78,6 +78,13 @@ public class TimeController : MonoBehaviour
 	{
 		dateCount += 1;
 		dayCount = (dayCount + 1) % 7;
+		hour = 3f;
+		foreach (var land in GameObject.FindGameObjectsWithTag("Land"))
+		{
+			land.GetComponent<LandController>().watered = false;
+		}
+
+		
 		
 	}
 }

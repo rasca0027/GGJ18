@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,14 +8,15 @@ public class PlayerController : MonoBehaviour
 
 	public float moveSpeed = 1f;
 	public Texture2D cursorDig;
+	public int currentAction = 0; 
 
 	private bool clicked = false;
 	private Vector3 mousePosition;
 	private Texture2D cursor;
 	private CursorMode cursorMode = CursorMode.Auto;
 	private Vector2 hotSpot = Vector2.zero;
-
-	private 
+	
+	
 	
 	// Use this for initialization
 	void Start () {
@@ -22,7 +24,14 @@ public class PlayerController : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
+		if (currentAction == 0)
+		{
+			clicked = false;
+			Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+		}
+
 		if (clicked)
 		{
 			mousePosition = Input.mousePosition;
@@ -31,41 +40,43 @@ public class PlayerController : MonoBehaviour
 			//cursor.transform.position = new Vector2(mousePosition.x, mousePosition.y);
 			Cursor.SetCursor(cursor, hotSpot, cursorMode);
 		}
-
+		
+		
+		
 	}
 
 	public void Dig()
 	{
 		clicked = true;
-		Debug.Log("clicked");
+		currentAction = 1;
 		cursor = cursorDig;	
 	}
 	
 	public void Sow()
 	{
 		clicked = true;
-		Debug.Log("clicked");
+		currentAction = 2;
 		cursor = cursorDig;	
 	}
 	
 	public void Water()
 	{
 		clicked = true;
-		Debug.Log("clicked");
+		currentAction = 3;
 		cursor = cursorDig;	
 	}
 	
 	public void Harvest()
 	{
 		clicked = true;
-		Debug.Log("clicked");
+		currentAction = 4;
 		cursor = cursorDig;	
 	}
 	
 	public void Store()
 	{
 		clicked = true;
-		Debug.Log("clicked");
+		currentAction = 5;
 		cursor = cursorDig;	
 	}
 }
