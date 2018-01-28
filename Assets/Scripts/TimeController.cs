@@ -9,6 +9,8 @@ public class TimeController : MonoBehaviour
 	public GameObject timeText;
 	public GameObject dayText;
 	public GameObject dateText;
+	public GameObject FarmScene;
+	public GameObject MarketScene;
 	
 	
 	private float hour;
@@ -66,6 +68,11 @@ public class TimeController : MonoBehaviour
 		{
 			hour += workHour;
 		}
+		else if ((hour + workHour) == 13.0f)
+		{
+			hour += workHour;
+			EndDay();
+		}
 		else
 		{
 			// raise warning
@@ -84,7 +91,18 @@ public class TimeController : MonoBehaviour
 			land.GetComponent<LandController>().watered = false;
 		}
 
-		
-		
+		if (dayCount >= 5)
+		{
+			FarmScene.active = false;
+			MarketScene.active = true;
+		}
+		else
+		{
+			FarmScene.active = true;
+			MarketScene.active = false;
+		}
+
+
+
 	}
 }

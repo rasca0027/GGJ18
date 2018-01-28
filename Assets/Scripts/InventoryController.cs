@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryController : MonoBehaviour
 {
 
 	public GameObject invPanel;
 	public Dictionary<string, int> inventory = new Dictionary<string, int>();
+
+	public GameObject desp;
 	
 	public GameObject hopeseed;
 	public GameObject joyseed;
@@ -50,12 +53,21 @@ public class InventoryController : MonoBehaviour
 	void Update () {
 		// display
 		// TODO!!
+		hopeseed.GetComponent<Text>().text = inventory["hope_crop"].ToString();
+		joyseed.GetComponent<Text>().text = inventory["joy_crop"].ToString();
+		fearseed.GetComponent<Text>().text = inventory["fear_crop"].ToString();
+		angerseed.GetComponent<Text>().text = inventory["anger_crop"].ToString();
+		desireseed.GetComponent<Text>().text = inventory["desire_crop"].ToString();
 		
+		//desp.GetComponent<Text>().text = 
+
 	}
 
 	public void AddInv(string stock, int num)
 	{
+
 		inventory[stock] += num;
+
 	}
 
 	public void CloseInv()
