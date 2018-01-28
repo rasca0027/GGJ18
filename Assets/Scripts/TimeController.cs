@@ -34,10 +34,12 @@ public class TimeController : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 
+		/*
 		if (hour >= 8)
 		{
 			bg.GetComponent<SpriteRenderer>().sprite = morning;
 		}
+		*/
 
 		// convert and display
 

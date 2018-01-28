@@ -38,7 +38,7 @@ public class Dialogue : MonoBehaviour
 	public GameObject choicePanel;
 	public GameObject customerImage;
 	public bool inMarket;
-	public GameObject choiceBtn;
+
 	
 	private int progress;
 	private int curMissionNum;
@@ -49,6 +49,8 @@ public class Dialogue : MonoBehaviour
 	private Sprite[] images;
 
 	private bool choiceGenerated = false;
+
+	private string[] answers;
 	
 	// TRY
 	//private List<List<string>> allMissions = new List<List<string>>();
@@ -63,6 +65,7 @@ public class Dialogue : MonoBehaviour
 		inMarket = false;
 		toggle = false; // me
 		interrogate = 0;
+		answers = new string[4];
 	}
 	
 	// Update is called once per frame
@@ -160,6 +163,10 @@ public class Dialogue : MonoBehaviour
 							else
 							{
 								// normal handler
+
+								choicePanel.transform.GetChild(i).GetComponent<UnityEngine.UI.Button>().onClick.AddListener(
+									() => Debug.Log(key)
+								);
 							}
 
 							i += 1;
@@ -193,8 +200,10 @@ public class Dialogue : MonoBehaviour
 			"I think that I can pass my finals without even studying and I want to feel the nagging sense of stress that would be appropriate for this situation."
 		};
 		mission1.choices = new Dictionary<string, string>();
-		mission1.choices.Add("Stress", "Thank You!");
-		mission1.choices.Add("Decline", "Why are you doing this to me?");
+		mission1.choices.Add("Stress", "Thanks homeboy!");
+		mission1.choices.Add("Fear", "I think I will fail in life. I don’t want to live anymore.");
+		mission1.choices.Add("Desire", "I am made to do great things. I will conquer the world.");
+		mission1.choices.Add("Decline", "Gee, What a buzzturd.");
 
 		missions[0] = mission1;
 		
@@ -216,10 +225,16 @@ public class Dialogue : MonoBehaviour
 
 	}
 
-	public void DieHandler()
+	void DieHandler()
 	{
 		// change Scene
 		Debug.Log("DIE");
 		SceneManager.LoadScene("Die", LoadSceneMode.Single);
 	}
+
+	void handler(string emo, string reply)
+	{
+		Debug.Log(reply);
+	}
+
 }
