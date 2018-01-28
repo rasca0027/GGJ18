@@ -39,6 +39,9 @@ public class PlayerController : MonoBehaviour
 			//cursor.transform.position = Vector2.Lerp(cursor.transform.position, mousePosition, moveSpeed);
 			//cursor.transform.position = new Vector2(mousePosition.x, mousePosition.y);
 			Cursor.SetCursor(cursor, hotSpot, cursorMode);
+
+			if (Input.GetMouseButtonDown(1))
+				clicked = false;
 		}
 		
 		

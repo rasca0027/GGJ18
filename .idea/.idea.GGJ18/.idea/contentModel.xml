@@ -15,11 +15,13 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Crop.cs" t="Include" />
+          <e p="Dialogue.cs" t="Include" />
           <e p="Emotion.cs" t="Include" />
           <e p="InventoryController.cs" t="Include" />
           <e p="LandController.cs" t="Include" />
           <e p="MoneyController.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="StoreController.cs" t="Include" />
           <e p="TimeController.cs" t="Include" />
         </e>
       </e>

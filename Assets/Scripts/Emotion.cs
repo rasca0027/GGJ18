@@ -24,7 +24,7 @@ public class Hope : Emotion
      {
          name = "Hope";
          description = "blah";
-         daysToGrow = 1; // just for testing TODO
+         daysToGrow = 3; // just for testing TODO
          seedPrice = 500;
          marketPrice = 1000;
      }

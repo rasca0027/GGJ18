@@ -21,12 +21,23 @@ public class LandController : MonoBehaviour
 		crop = new Crop();
 		watered = false;
 		spritesNight = Resources.LoadAll<Sprite>("NightCrops");
-		Debug.Log(spritesNight[0]);
+
 	}
 
 	private void Update()
 	{
-		if (crop.state == 3)
+		
+		
+		if (crop.state == 0 || crop.state == 5)
+		{
+			GetComponent<SpriteRenderer>().sprite = spritesNight[6];
+		} else if (crop.state == 1)
+		{
+			GetComponent<SpriteRenderer>().sprite = spritesNight[0];
+		} else if (crop.state == 2)
+		{
+			GetComponent<SpriteRenderer>().sprite = spritesNight[2];
+		} else if (crop.state == 3)
 		{
 			if (crop.remainingDay == 0)
 			{
@@ -37,6 +48,13 @@ public class LandController : MonoBehaviour
 				//Debug.Log("not waterrrrrrrrrrrrrrr");
 				GetComponent<SpriteRenderer>().sprite = spritesNight[2];
 			}
+			else
+			{
+				GetComponent<SpriteRenderer>().sprite = spritesNight[5];
+			}
+		} else if (crop.state == 4)
+		{
+			GetComponent<SpriteRenderer>().sprite = spritesNight[1];
 		}
 	}
 
@@ -55,7 +73,7 @@ public class LandController : MonoBehaviour
 				{
 					crop.state = 1;
 					gameManager.GetComponent<TimeController>().PassTime(1f);
-					GetComponent<SpriteRenderer>().sprite = spritesNight[0];
+					
 				}
 				// change stage to 1
 
@@ -73,7 +91,7 @@ public class LandController : MonoBehaviour
 					crop.AddSeed(hope);
 					// TODO!!
 					gameManager.GetComponent<TimeController>().PassTime(0.5f);
-					GetComponent<SpriteRenderer>().sprite = spritesNight[2];
+					
 					
 				}
 			}
@@ -89,7 +107,7 @@ public class LandController : MonoBehaviour
 					if (crop.remainingDay <= 0)
 						crop.remainingDay = 0;
 					gameManager.GetComponent<TimeController>().PassTime(0.5f);
-					GetComponent<SpriteRenderer>().sprite = spritesNight[5];
+					
 				}
 				else if (crop.state == 3)
 				{
@@ -104,7 +122,7 @@ public class LandController : MonoBehaviour
 						if (crop.remainingDay <= 0)
 							crop.remainingDay = 0;
 						Debug.Log(crop.remainingDay);
-						GetComponent<SpriteRenderer>().sprite = spritesNight[5];
+						
 					}
 					else
 					{
@@ -125,7 +143,7 @@ public class LandController : MonoBehaviour
 						Debug.Log("harvesting");
 						crop.state = 4;
 						gameManager.GetComponent<TimeController>().PassTime(1f);
-						GetComponent<SpriteRenderer>().sprite = spritesNight[1];
+						
 					}
 					else
 					{

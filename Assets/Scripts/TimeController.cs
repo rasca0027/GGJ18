@@ -11,6 +11,9 @@ public class TimeController : MonoBehaviour
 	public GameObject dateText;
 	public GameObject FarmScene;
 	public GameObject MarketScene;
+	public GameObject bg;
+	public Sprite morning;
+	public GameObject toolbar;
 	
 	
 	private float hour;
@@ -25,11 +28,17 @@ public class TimeController : MonoBehaviour
 	{
 		hour = 3f;
 		dateCount = 1;
-		dayCount = 0;
+		dayCount = 4; // TODO 0
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (hour >= 8)
+		{
+			bg.GetComponent<SpriteRenderer>().sprite = morning;
+		}
+
 		// convert and display
 
 		string convertedTime = "";
@@ -94,12 +103,14 @@ public class TimeController : MonoBehaviour
 		if (dayCount >= 5)
 		{
 			FarmScene.active = false;
+			toolbar.active = false;
 			MarketScene.active = true;
 		}
 		else
 		{
 			FarmScene.active = true;
 			MarketScene.active = false;
+			toolbar.active = true;
 		}
 
 

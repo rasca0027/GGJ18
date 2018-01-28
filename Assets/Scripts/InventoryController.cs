@@ -53,11 +53,13 @@ public class InventoryController : MonoBehaviour
 	void Update () {
 		// display
 		// TODO!!
-		hopeseed.GetComponent<Text>().text = inventory["hope_crop"].ToString();
-		joyseed.GetComponent<Text>().text = inventory["joy_crop"].ToString();
-		fearseed.GetComponent<Text>().text = inventory["fear_crop"].ToString();
-		angerseed.GetComponent<Text>().text = inventory["anger_crop"].ToString();
-		desireseed.GetComponent<Text>().text = inventory["desire_crop"].ToString();
+		hopecrop.GetComponent<Text>().text = inventory["hope_crop"].ToString();
+		joycrop.GetComponent<Text>().text = inventory["joy_crop"].ToString();
+		fearcrop.GetComponent<Text>().text = inventory["fear_crop"].ToString();
+		angercrop.GetComponent<Text>().text = inventory["anger_crop"].ToString();
+		desirecrop.GetComponent<Text>().text = inventory["desire_crop"].ToString();
+		griefcrop.GetComponent<Text>().text = inventory["grief_crop"].ToString();
+		stresscrop.GetComponent<Text>().text = inventory["stress_crop"].ToString();
 		
 		//desp.GetComponent<Text>().text = 
 

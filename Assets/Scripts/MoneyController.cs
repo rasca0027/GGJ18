@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MoneyController : MonoBehaviour
 {
 	public GameObject moneyText;
-	private int money;
+	public int money;
 	
 	// Use this for initialization
 	void Start ()
@@ -17,11 +17,11 @@ public class MoneyController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		moneyText.GetComponent<Text>().text = money.ToString();
+		moneyText.GetComponent<Text>().text = "$" + money.ToString();
 	}
 
 	public void ChangeMoney(int amount)
-	{
+	{	
 		money += amount;
 	}
 }
