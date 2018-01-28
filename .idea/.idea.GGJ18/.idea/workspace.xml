@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67dca1a5-70be-487e-8067-cbc139a51c1b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ18/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ18/.idea/contentModel.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GGJ18/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.GGJ18/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Emotion.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Emotion.cs" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InventoryController.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/InventoryController.cs" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LandController.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/LandController.cs" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MoneyController.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/MoneyController.cs" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimeController.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/TimeController.cs" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TimeController.cs.meta" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Assets/farmScene.unity" afterPath="$PROJECT_DIR$/Assets/farmScene.unity" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,24 +15,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PlayerController.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="43" column="32" lean-forward="false" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+            <state relative-caret-position="-286">
+              <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
               <folding>
-                <marker date="1517157151988" expanded="false" signature="6:97" ph="..." />
-                <marker date="1517157151988" expanded="true" signature="144:1534" ph="{...}" />
-                <marker date="1517157151988" expanded="true" signature="474:481" ph="{...}" />
-                <marker date="1517157151988" expanded="true" signature="535:1080" ph="{...}" />
-                <marker date="1517157151988" expanded="true" signature="564:650" ph="{...}" />
-                <marker date="1517157151988" expanded="true" signature="666:1068" ph="{...}" />
-                <marker date="1517157151988" expanded="true" signature="780:956" ph="/* cursor.transform.position = Vector2.Lerp(cursor.transform.position, mousePosition, moveSpeed); ... */" />
-                <marker date="1517157151988" expanded="true" signature="1100:1168" ph="{...}" />
-                <marker date="1517157151988" expanded="true" signature="1189:1257" ph="{...}" />
-                <marker date="1517157151988" expanded="true" signature="1280:1348" ph="{...}" />
-                <marker date="1517157151988" expanded="true" signature="1373:1441" ph="{...}" />
-                <marker date="1517157151988" expanded="true" signature="1464:1532" ph="{...}" />
+                <marker date="1517157833973" expanded="false" signature="6:97" ph="..." />
+                <marker date="1517157833973" expanded="true" signature="144:1658" ph="{...}" />
+                <marker date="1517157833973" expanded="true" signature="598:605" ph="{...}" />
+                <marker date="1517157833973" expanded="true" signature="659:1204" ph="{...}" />
+                <marker date="1517157833973" expanded="true" signature="688:774" ph="{...}" />
+                <marker date="1517157833973" expanded="true" signature="790:1192" ph="{...}" />
+                <marker date="1517157833973" expanded="true" signature="904:1080" ph="/* cursor.transform.position = Vector2.Lerp(cursor.transform.position, mousePosition, moveSpeed); ... */" />
+                <marker date="1517157833973" expanded="true" signature="1224:1292" ph="{...}" />
+                <marker date="1517157833973" expanded="true" signature="1313:1381" ph="{...}" />
+                <marker date="1517157833973" expanded="true" signature="1404:1472" ph="{...}" />
+                <marker date="1517157833973" expanded="true" signature="1497:1565" ph="{...}" />
+                <marker date="1517157833973" expanded="true" signature="1588:1656" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InventoryController.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/InventoryController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="54" column="4" lean-forward="false" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+              <folding>
+                <marker date="1517158582159" expanded="false" signature="6:100" ph="..." />
+                <marker date="1517158582159" expanded="true" signature="150:2607" ph="{...}" />
+                <marker date="1517158582159" expanded="true" signature="755:1240" ph="{...}" />
+                <marker date="1517158582159" expanded="true" signature="1295:2412" ph="{...}" />
+                <marker date="1517158582159" expanded="true" signature="2456:2491" ph="{...}" />
+                <marker date="1517158582159" expanded="true" signature="2516:2549" ph="{...}" />
+                <marker date="1517158582159" expanded="true" signature="2573:2605" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -67,11 +79,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Emotion.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LandController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StoreController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/InventoryController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TimeController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MoneyController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InventoryController.cs" />
       </list>
     </option>
   </component>
@@ -333,13 +345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/InventoryController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="55" column="55" lean-forward="false" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/TimeController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -363,21 +368,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="43" column="32" lean-forward="false" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        <state relative-caret-position="-286">
+          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
           <folding>
-            <marker date="1517157151988" expanded="false" signature="6:97" ph="..." />
-            <marker date="1517157151988" expanded="true" signature="144:1534" ph="{...}" />
-            <marker date="1517157151988" expanded="true" signature="474:481" ph="{...}" />
-            <marker date="1517157151988" expanded="true" signature="535:1080" ph="{...}" />
-            <marker date="1517157151988" expanded="true" signature="564:650" ph="{...}" />
-            <marker date="1517157151988" expanded="true" signature="666:1068" ph="{...}" />
-            <marker date="1517157151988" expanded="true" signature="780:956" ph="/* cursor.transform.position = Vector2.Lerp(cursor.transform.position, mousePosition, moveSpeed); ... */" />
-            <marker date="1517157151988" expanded="true" signature="1100:1168" ph="{...}" />
-            <marker date="1517157151988" expanded="true" signature="1189:1257" ph="{...}" />
-            <marker date="1517157151988" expanded="true" signature="1280:1348" ph="{...}" />
-            <marker date="1517157151988" expanded="true" signature="1373:1441" ph="{...}" />
-            <marker date="1517157151988" expanded="true" signature="1464:1532" ph="{...}" />
+            <marker date="1517157833973" expanded="false" signature="6:97" ph="..." />
+            <marker date="1517157833973" expanded="true" signature="144:1658" ph="{...}" />
+            <marker date="1517157833973" expanded="true" signature="598:605" ph="{...}" />
+            <marker date="1517157833973" expanded="true" signature="659:1204" ph="{...}" />
+            <marker date="1517157833973" expanded="true" signature="688:774" ph="{...}" />
+            <marker date="1517157833973" expanded="true" signature="790:1192" ph="{...}" />
+            <marker date="1517157833973" expanded="true" signature="904:1080" ph="/* cursor.transform.position = Vector2.Lerp(cursor.transform.position, mousePosition, moveSpeed); ... */" />
+            <marker date="1517157833973" expanded="true" signature="1224:1292" ph="{...}" />
+            <marker date="1517157833973" expanded="true" signature="1313:1381" ph="{...}" />
+            <marker date="1517157833973" expanded="true" signature="1404:1472" ph="{...}" />
+            <marker date="1517157833973" expanded="true" signature="1497:1565" ph="{...}" />
+            <marker date="1517157833973" expanded="true" signature="1588:1656" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/InventoryController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="54" column="4" lean-forward="false" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+          <folding>
+            <marker date="1517158582159" expanded="false" signature="6:100" ph="..." />
+            <marker date="1517158582159" expanded="true" signature="150:2607" ph="{...}" />
+            <marker date="1517158582159" expanded="true" signature="755:1240" ph="{...}" />
+            <marker date="1517158582159" expanded="true" signature="1295:2412" ph="{...}" />
+            <marker date="1517158582159" expanded="true" signature="2456:2491" ph="{...}" />
+            <marker date="1517158582159" expanded="true" signature="2516:2549" ph="{...}" />
+            <marker date="1517158582159" expanded="true" signature="2573:2605" ph="{...}" />
           </folding>
         </state>
       </provider>

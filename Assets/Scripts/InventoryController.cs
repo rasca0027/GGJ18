@@ -52,7 +52,7 @@ public class InventoryController : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 		// display
-		// TODO!!
+	
 		hopecrop.GetComponent<Text>().text = inventory["hope_crop"].ToString();
 		joycrop.GetComponent<Text>().text = inventory["joy_crop"].ToString();
 		fearcrop.GetComponent<Text>().text = inventory["fear_crop"].ToString();
@@ -61,6 +61,13 @@ public class InventoryController : MonoBehaviour
 		griefcrop.GetComponent<Text>().text = inventory["grief_crop"].ToString();
 		stresscrop.GetComponent<Text>().text = inventory["stress_crop"].ToString();
 		
+		hopeseed.GetComponent<Text>().text = inventory["hope_seed"].ToString();
+		joyseed.GetComponent<Text>().text = inventory["joy_seed"].ToString();
+		fearseed.GetComponent<Text>().text = inventory["fear_seed"].ToString();
+		angerseed.GetComponent<Text>().text = inventory["anger_seed"].ToString();
+		desireseed.GetComponent<Text>().text = inventory["desire_seed"].ToString();
+		griefseed.GetComponent<Text>().text = inventory["grief_seed"].ToString();
+		stressseed.GetComponent<Text>().text = inventory["stress_seed"].ToString();
 		//desp.GetComponent<Text>().text = 
 
 	}

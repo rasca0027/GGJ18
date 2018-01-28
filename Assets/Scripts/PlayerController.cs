@@ -8,6 +8,10 @@ public class PlayerController : MonoBehaviour
 
 	public float moveSpeed = 1f;
 	public Texture2D cursorDig;
+	public Texture2D cursorSow;
+	public Texture2D cursorWater;
+	public Texture2D cursorHarvest;
+	public Texture2D cursorStore;
 	public int currentAction = 0; 
 
 	private bool clicked = false;
