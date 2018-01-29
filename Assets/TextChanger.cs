@@ -6,8 +6,7 @@ public class TextChanger : MonoBehaviour {
  
 	private Text[] GetText;
 	public Font myFont;
-	public GameObject inv;
-	public GameObject store;
+
  
 	// Use this for initialization
 	void Start () {
@@ -17,7 +16,5 @@ public class TextChanger : MonoBehaviour {
 			go.font = myFont;
 
 
-		inv.active = false;
-		store.active = false;
 	}
 }

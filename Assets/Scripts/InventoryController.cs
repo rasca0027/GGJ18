@@ -46,7 +46,7 @@ public class InventoryController : MonoBehaviour
 		inventory.Add("anger_crop", 0);
 		inventory.Add("desire_crop", 0);
 		inventory.Add("grief_crop", 0);
-		inventory.Add("stress_crop", 20);
+		inventory.Add("stress_crop", 0);
 		
 	}
 	

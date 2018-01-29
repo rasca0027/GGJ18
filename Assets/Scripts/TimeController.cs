@@ -27,8 +27,8 @@ public class TimeController : MonoBehaviour
 	void Start ()
 	{
 		hour = 3f;
-		dateCount = 1;
-		dayCount = 0; // TODO 0
+		dateCount = 0;
+		dayCount = -1; // TODO 0
 	}
 	
 	// Update is called once per frame
