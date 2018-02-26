@@ -94,6 +94,7 @@ public class TimeController : MonoBehaviour
 
 	public void EndDay()
 	{
+		
 		dateCount += 1;
 		dayCount = (dayCount + 1) % 7;
 		hour = 3f;

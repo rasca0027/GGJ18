@@ -7,20 +7,20 @@ public class PlayerController : MonoBehaviour
 {
 
 	public float moveSpeed = 1f;
-	public Texture2D cursorDig;
-	public Texture2D cursorSow;
-	public Texture2D cursorWater;
-	public Texture2D cursorHarvest;
-	public Texture2D cursorStore;
+	public Sprite cursorDig;
+	public Sprite cursorSow;
+	public Sprite cursorWater;
+	public Sprite cursorHarvest;
+	public Sprite cursorStore;
 	public int currentAction = 0;
 	public int chosenSeed;
+	public GameObject cursorPrefab;
 
 	private bool clicked = false;
 	private Vector3 mousePosition;
-	private Texture2D cursor;
 	private CursorMode cursorMode = CursorMode.Auto;
 	private Vector2 hotSpot = Vector2.zero;
-	
+	private GameObject cursorObj;
 	
 	
 	// Use this for initialization
@@ -36,15 +36,17 @@ public class PlayerController : MonoBehaviour
 		{
 			clicked = false;
 			Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+			Destroy (cursorObj);
 		}
 
 		if (clicked)
 		{
 			mousePosition = Input.mousePosition;
 			mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-			//cursor.transform.position = Vector2.Lerp(cursor.transform.position, mousePosition, moveSpeed);
-			//cursor.transform.position = new Vector2(mousePosition.x, mousePosition.y);
-			Cursor.SetCursor(cursor, hotSpot, cursorMode);
+			
+			//cursorObj.transform.position = Vector2.Lerp(cursorObj.transform.position, mousePosition, moveSpeed);
+			cursorObj.transform.position = new Vector3(mousePosition.x, mousePosition.y, -0.5f);
+			//Cursor.SetCursor(cursor, hotSpot, cursorMode);
 
 			if (Input.GetMouseButtonDown(1))
 				currentAction = 0;
@@ -58,35 +60,44 @@ public class PlayerController : MonoBehaviour
 	{
 		clicked = true;
 		currentAction = 1;
-		cursor = cursorDig;	
+		cursorObj = Instantiate(cursorPrefab);	
+		cursorObj.transform.localScale = new Vector3 (0.6f, 0.6f);
 	}
 	
 	public void Sow()
 	{
 		clicked = true;
 		currentAction = 2;
-		cursor = cursorDig;	
+		cursorObj = Instantiate(cursorPrefab);
+		cursorObj.GetComponent<SpriteRenderer> ().sprite = cursorSow;
+		cursorObj.transform.localScale = new Vector3 (0.6f, 0.6f);
 	}
 	
 	public void Water()
 	{
 		clicked = true;
 		currentAction = 3;
-		cursor = cursorDig;	
+		cursorObj = Instantiate(cursorPrefab);
+		cursorObj.GetComponent<SpriteRenderer> ().sprite = cursorWater;
+		cursorObj.transform.localScale = new Vector3 (0.6f, 0.6f);
 	}
 	
 	public void Harvest()
 	{
 		clicked = true;
 		currentAction = 4;
-		cursor = cursorDig;	
+		cursorObj = Instantiate(cursorPrefab);
+		cursorObj.GetComponent<SpriteRenderer> ().sprite = cursorHarvest;
+		cursorObj.transform.localScale = new Vector3 (0.6f, 0.6f);
 	}
 	
 	public void Store()
 	{
 		clicked = true;
 		currentAction = 5;
-		cursor = cursorDig;	
+		cursorObj = Instantiate(cursorPrefab);
+		cursorObj.GetComponent<SpriteRenderer> ().sprite = cursorStore;
+		cursorObj.transform.localScale = new Vector3 (0.6f, 0.6f);
 	}
 
 	public void ChooseStress()

@@ -6697,13 +6697,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.1
-  cursorDig: {fileID: 2800000, guid: 43cafdbfe6affd0488b6dc4c883d60ff, type: 3}
-  cursorSow: {fileID: 2800000, guid: 40b46b4695ae2b7408aa7a5f25495291, type: 3}
-  cursorWater: {fileID: 2800000, guid: e920a8a840401174da27087e1429f880, type: 3}
-  cursorHarvest: {fileID: 2800000, guid: b0954fba73288d2438024e532aea6b89, type: 3}
-  cursorStore: {fileID: 2800000, guid: 4f55fc579dd362d4f8d8f48f2c97dc51, type: 3}
+  cursorDig: {fileID: 21300000, guid: 7ee8614f233574f45b747675011732a8, type: 3}
+  cursorSow: {fileID: 21300000, guid: f67359dd321dda041810791fdc4d3779, type: 3}
+  cursorWater: {fileID: 21300000, guid: abf779e231bd7fa4bba9d129806648be, type: 3}
+  cursorHarvest: {fileID: 21300000, guid: 207d20acdb8947949ab84a14fbfbfb4e, type: 3}
+  cursorStore: {fileID: 21300000, guid: 347f8b9b6b5e1e9488776d929776b815, type: 3}
   currentAction: 0
   chosenSeed: 0
+  cursorPrefab: {fileID: 1581040894979392, guid: 2b05c3c22628f7d4c92f88b8bdd5a867,
+    type: 2}
 --- !u!114 &962318098
 MonoBehaviour:
   m_ObjectHideFlags: 0

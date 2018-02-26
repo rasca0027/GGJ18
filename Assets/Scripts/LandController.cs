@@ -230,7 +230,7 @@ public class LandController : MonoBehaviour
 				}
 			}
 
-			gameManager.GetComponent<PlayerController>().currentAction = 0;
+			//gameManager.GetComponent<PlayerController>().currentAction = 0;
 		}
 	}
 
